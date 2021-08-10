@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DomainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('domains')->group(function () {
-  Route::get('list', [DomainController::class, 'index']);
+  Route::get('/', [DomainController::class, 'index']);
 });
